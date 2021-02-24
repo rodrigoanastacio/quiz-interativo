@@ -1,0 +1,31 @@
+:root {
+  --black: #121214;
+  --gray: #202024;
+
+  --header-bg-color: var(--gray);
+  --body-bg-color: var(--black)
+}
+
+body {
+  background: var(--body-bg-color);
+}
+
+/* Utilities */
+.bg-black {
+  background-color: var(--header-bg-color);
+}
+
+.bg-gray {
+  background: var(--gray);
+}
+
+.score {
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.quiz-form > div:not(:last-child){
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 5px #000;
+}
