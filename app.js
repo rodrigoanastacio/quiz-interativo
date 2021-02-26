@@ -1,5 +1,5 @@
 const form = document.querySelector('.quiz-form')
-const scoreEl = document.querySelector('.score')
+const finalResult = document.querySelector('.result')
 
 const correctAnswer = ['B', 'A', 'D', 'C']
 
@@ -20,8 +20,19 @@ form.addEventListener('submit', event => {
       score += 25
     }
   })
-  console.log(score)
 
-  scoreEl.textContent = `Pontuação: ${score}`
-  // totalScore = score.textContent = score
+  scrollTo(0, 0)
+
+  finalResult.classList.remove('d-none')
+
+  let counter = 0
+
+  const timer = setInterval(() => {
+    if (counter === score) {
+      clearInterval(timer)
+    }
+
+    finalResult.querySelector('span').textContent = `${counter}%`
+    counter++
+  }, 10)
 })
